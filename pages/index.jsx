@@ -11,7 +11,7 @@ const Index = () => {
   const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/data', { params: filters })
+     axios.get(`${import.meta.env.VITE_API_BASE_URL}/data`, { params: filters })
       .then((res) => setData(res.data))
       .catch((err) => console.error(err));
   }, [filters]);
